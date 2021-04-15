@@ -3,8 +3,9 @@ var generateBtn = document.querySelector("#generate");
 
 // confirmation prompt variables.
 var numeric;
-var numericlist = "0123456789"
+var numericlist = "0123456789";
 var characters;
+var characterslist = "#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var upperLetters;
 var lowerLetters;
 var pwstring;
@@ -25,7 +26,9 @@ function generatePassword() {
         alert("you must select okay for at least one criteria");
       } else if (numeric == true && characters == false && upperLetters == false && lowerLetters == false) {
           pwstring = numericlist;
-      } else if (numeric == true && characters == false && upperLetters == false && lowerLetters == false)
+      } else if (numeric == true && characters == true && upperLetters == false && lowerLetters == false) {
+          pwstring = numericlist.concat(characterslist);
+      }
       
 
 console.log(typeof(len));
